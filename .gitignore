@@ -1,0 +1,22 @@
+# Node
+node_modules/
+frontend/.next/
+frontend/.turbo/
+frontend/.vercel/
+frontend/.env.local
+backend/.env
+backend/dist/
+backend/*.sqlite*
+backend/test-db.sqlite*
+
+# Logs & coverage
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Mac
+.DS_Store
+
+# Local docs that should remain private
+docs/Technical_guide.md

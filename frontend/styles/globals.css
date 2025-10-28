@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.liquid-glass-effect {
+  background-color: var(--glass-surface);
+  border: 1px solid var(--glass-border);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.liquid-glass-effect:hover {
+  background-color: var(--glass-surface-hover);
+  border-color: color-mix(in oklch, var(--glass-border) 65%, transparent);
+}
+
+.liquid-glass-effect:active {
+  background-color: var(--glass-surface-active);
+  box-shadow: 0 0 15px color-mix(in oklch, var(--primary) 40%, transparent);
+}

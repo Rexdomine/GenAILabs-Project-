@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import type { MotionProps } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -12,18 +13,14 @@ type InspectButtonProps = {
   className?: string;
 };
 
-const pulse = {
+const pulse: MotionProps = {
   initial: { scale: 1, boxShadow: "0 0 0 rgba(88, 60, 255, 0.45)" },
   animate: {
     scale: [1, 1.05, 1],
-    boxShadow: [
-      "0 0 0 rgba(88, 60, 255, 0.45)",
-      "0 0 22px rgba(88, 60, 255, 0.65)",
-      "0 0 0 rgba(88, 60, 255, 0.45)",
-    ],
+    boxShadow: ["0 0 0 rgba(88, 60, 255, 0.45)", "0 0 22px rgba(88, 60, 255, 0.65)", "0 0 0 rgba(88, 60, 255, 0.45)"],
   },
   transition: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
-} as const;
+};
 
 export function InspectButton({ onClick, position, className }: InspectButtonProps) {
   return (

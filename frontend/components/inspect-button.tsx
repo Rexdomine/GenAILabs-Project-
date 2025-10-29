@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import type { MotionProps } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -13,18 +12,22 @@ type InspectButtonProps = {
   className?: string;
 };
 
-const pulse: MotionProps = {
-  initial: { scale: 1, boxShadow: "0 0 0 rgba(88, 60, 255, 0.45)" },
-  animate: {
-    scale: [1, 1.05, 1],
-    boxShadow: ["0 0 0 rgba(88, 60, 255, 0.45)", "0 0 22px rgba(88, 60, 255, 0.65)", "0 0 0 rgba(88, 60, 255, 0.45)"],
-  },
-  transition: { duration: 2.8, repeat: Infinity, ease: "easeInOut" },
-};
+const scaleKeyframes: number[] = [1, 1.05, 1];
+const shadowKeyframes: string[] = [
+  "0 0 0 rgba(88, 60, 255, 0.45)",
+  "0 0 22px rgba(88, 60, 255, 0.65)",
+  "0 0 0 rgba(88, 60, 255, 0.45)",
+];
+const pulseTransition = { duration: 2.8, repeat: Infinity, ease: "easeInOut" as const };
 
 export function InspectButton({ onClick, position, className }: InspectButtonProps) {
   return (
-    <motion.div {...pulse} className={className}>
+    <motion.div
+      initial={{ scale: 1, boxShadow: "0 0 0 rgba(88, 60, 255, 0.45)" }}
+      animate={{ scale: scaleKeyframes, boxShadow: shadowKeyframes }}
+      transition={pulseTransition}
+      className={className}
+    >
       <Button
         type="button"
         onClick={onClick}

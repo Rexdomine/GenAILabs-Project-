@@ -21,13 +21,13 @@
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "openai": "^6.6.0",
-    "zod": "^4.1.12"
+    "zod": "^4.1.12",
+    "@types/node": "^22.7.4"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
-    "@types/node": "^22.7.4",
     "@types/supertest": "^6.0.3",
     "supertest": "^7.1.4",
     "tsx": "^4.20.6",
